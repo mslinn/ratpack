@@ -1,23 +1,22 @@
-#ratpack
+# `Ratpack`
 
-a simple boilerplate for creating production-ready sinatra apps that use activerecord and sqlite
+A simple Sinatra app that uses ActiveRecord, Sqlite and Twitter Bootstrap v2.3 (old!). All the other dependencies were updated.
 
-twitterbootstrap using html and css are included.
 
-if ya want haml and sass, be on the look for classy.
-
-## Up and running
+## Up and Running
 1. `bundle install`
-2. `shotgun`
-3. visit `localhost:9393`
-
-## Gemfile
-- [sinatra](http://www.sinatrarb.com/): web framework
-- [sqlite3](https://github.com/luislavena/sqlite3-ruby): Database
-- [activerecord](http://guides.rubyonrails.org/active_record_querying.html): ORM
-- [sinatra-activerecord](https://github.com/bmizerany/sinatra-activerecord)
-- [rake](http://rake.rubyforge.org/)
-
-### Development
-   * [shotgun](https://github.com/rtomayko/shotgun)
-   * [tux](http://tagaholic.me/2011/04/10/tux-a-sinatra-console.html)
+2. `sudo apt install rerun`
+3. `rerun -- rackup --port 4321`
+   ```
+   13:59:31 [rerun] Rerun (26496) running Ratpack (26676)
+   Puma starting in single mode...
+   * Puma version: 6.0.0 (ruby 3.1.0-p0) ("Sunflower")
+   *  Min threads: 0
+   *  Max threads: 5
+   *  Environment: development
+   *          PID: 26676
+   * Listening on http://127.0.0.1:4321
+   * Listening on http://[::1]:4321
+   Use Ctrl-C to stop
+   ```
+4. Visit http://localhost:4321

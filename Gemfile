@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
 
-gem "sinatra"
-gem "sqlite3"
-gem "activerecord"
-gem "sinatra-activerecord"
-gem "rake"
+gem 'sinatra', '~> 3.0.5'
+gem "sqlite3", '~> 1.3', '>= 1.3.11'
+gem 'sinatra-activerecord'
 
 group :development do
-  gem "shotgun"
-  gem "tux"
+  gem 'rake', require: false
+  gem 'rerun', require: false
+  gem 'rackup', require: false
+  gem 'tux'
 end

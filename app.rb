@@ -1,35 +1,25 @@
-require 'bundler'
-Bundler.require
+require 'sinatra/activerecord'
+require 'sinatra/base'
+require 'sqlite3'
 
-Dir.glob('./lib/*.rb') do |model|
-  require model
-end
+Dir.glob('./lib/*.rb').sort.each { |model| require model }
 
-module Name
-  class App < Sinatra::Application
-
-    #configure
+module Ratpack
+  class App < Sinatra::Base
     configure do
       set :root, File.dirname(__FILE__)
-      set :public_folder, 'public'
     end
 
-    #database
     set :database, "sqlite3:///database.db"
 
-    #filters
-
-    #routes
     get '/' do
       erb :index
     end
 
-    #helpers
     helpers do
       def partial(file_name)
-        erb file_name, :layout => false
+        erb file_name, layout: false
       end
     end
-
   end
 end
