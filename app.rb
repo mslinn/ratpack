@@ -2,15 +2,17 @@ require 'sinatra/activerecord'
 require 'sinatra/base'
 require 'sqlite3'
 
-Dir.glob('./lib/*.rb').sort.each { |model| require model }
+Dir.glob('./lib/model/*.rb').sort.each { |model| require model }
 
 module Ratpack
   class App < Sinatra::Base
+    register Sinatra::ActiveRecordExtension
+
     configure do
       set :root, File.dirname(__FILE__)
     end
 
-    set :database, "sqlite3:///database.db"
+    set :database, {adapter: "sqlite3", database: "database.sqlite3"}
 
     get '/' do
       erb :index
